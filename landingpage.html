@@ -6,10 +6,24 @@
     <title>Landing Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../rummage/assets/css/style.css">
-    <script src="assets/js/"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="assets/js/favorites.js"></script>
+    <script src="assets/js/search.js"></script>
 
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAtrv_EENVJvgdsyfN7pmVzMnp2-n-Q2sw",
+        authDomain: "rummage-base.firebaseapp.com",
+        databaseURL: "https://rummage-base.firebaseio.com",
+        projectId: "rummage-base",
+        storageBucket: "rummage-base.appspot.com",
+        messagingSenderId: "529528576551"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
 <body>    
         <ul>
                 <li><a class="active" href="#home">Home</a></li>
@@ -18,4 +32,8 @@
                 <li><a href="#pantry">Pantry</a></li>
               </ul>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/favorites.js"></script>
+<script src="assets/js/search.js"></script>
+
 </html>
