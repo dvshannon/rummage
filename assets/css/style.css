@@ -1,6 +1,9 @@
 body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Fjalla One', sans-serif;
     background-color: #765285;
+    color: #feb47b;
+    text-align: center;
+    
 }
 
 ul {
@@ -34,3 +37,20 @@ ul {
   /* li a:hover {
     background-color: #f5ab99;
   } */
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5ab99;
+    color: white;
+    text-align: center;
+  }
+
+  .p {
+    color: #feb47b;
+  }
+
+  .card {
+    background-color: #765258;
+  }
