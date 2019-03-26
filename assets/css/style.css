@@ -10,11 +10,20 @@ label {
 #ingredients-input {
     float: left;
     width: 496px;
+    margin-bottom: 20px;
     padding: 0;
+    color: #F5AB99;
     line-height: 46px;
     font-size: 2rem;
+    outline-style: none;
     
 }
+
+.btn {
+    border: none;
+    outline-style: none;
+}
+
 #add-ingredients {
     float: left;
     width: 50px;
@@ -30,18 +39,34 @@ label {
     width: 50px;
     background-color: #FF7E5F;
     color: white;
-    /* font-size: .5rem; not working for some reason */
+    font-size: 2rem;
+}
+
+#ing-header {
+    color: #F5AB99;
+    font-size: 2rem;
 }
 
 #ingredients {
     clear: both;
 }
 .ingredient {
+    display: inline-block;
     height: 25px;
-    width: 75px;
+    min-width: 75px;
+    width: auto;
+    margin: 10px 10px;
+    padding: 7px;
     border: 1px solid #FF7E5F;
+    border-radius: 5px;
     color: #FF7E5F;
     font-size: 1.5rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+.remove {
+    color: white;
+    font-size: .5rem;
 }
 
 #results {
@@ -56,15 +81,18 @@ label {
     height: auto;
     width: 200px;
     margin: 10px;
+    background-color: rgb(226, 119, 93);
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 .drinkName {
-    height: 25px;
+    height: 45px;
     background-color: #FEB47B;
     color: white;
     border-bottom: 1px solid rgb(212, 135, 75);
-    font-size: 1.5rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.25rem;
     text-align: center;
 }
 .imgDrink {
@@ -73,14 +101,33 @@ label {
     border-bottom: 1px solid rgb(212, 135, 75);
 }
 .favorite {
-    text-align: center;
     width: 100%;
     height: auto;
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
-
 /* Psuedo Classes */
-.favorite:hover {
-    background-color: rgb(226, 119, 93);
+
+#ingredients-input:focus {
+    border: 2px solid #F5AB99;
+}
+.ingredient:hover {
+    background-color: #FF7E5F;
     color: white;
+}
+
+#add-ingredients:hover {
+    background-color: rgb(247, 158, 90);
+    transition-duration: .15s;
+}
+#search-button:hover {
+    background-color: rgb(240, 93, 57);
+    transition-duration: .15s;
+}
+
+.favorite:hover {
+    color: #765265;
+    transition-duration: .25s;
 }
