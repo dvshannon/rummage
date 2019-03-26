@@ -14,36 +14,36 @@ label {
     padding: 0;
     color: #F5AB99;
     line-height: 46px;
-    font-size: 2rem;
+    font-size: 1.75rem;
     outline-style: none;
-    
 }
 
 .btn {
+    float: left;
+    height: 50px;
+    width: 50px;
     border: none;
     outline-style: none;
+    font-size: 2rem;
 }
 
 #add-ingredients {
-    float: left;
-    width: 50px;
-    height: 50px;
     background-color: #FEB47B;
     color: white;
-    font-size: 2rem;
-
+}
+#pantry-button {
+    background-color: #765265;
+    color: white;
 }
 #search-button {
-    float: left;
-    height: 50px;
-    width: 50px;
+    
     background-color: #FF7E5F;
     color: white;
-    font-size: 2rem;
+    
 }
 
 #ing-header {
-    color: #F5AB99;
+    color: #351C4D;
     font-size: 2rem;
 }
 
@@ -120,6 +120,10 @@ label {
 
 #add-ingredients:hover {
     background-color: rgb(247, 158, 90);
+    transition-duration: .15s;
+}
+#pantry-button:hover {
+    background-color: #693852;
     transition-duration: .15s;
 }
 #search-button:hover {
