@@ -25,6 +25,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="main.js"></script> -->
 
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -32,6 +36,8 @@
 </head>
 
 <body>
+
+    <!-- <body>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -57,9 +63,109 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div> -->
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <div id="carousel-example-multi" class="carousel slide carousel-multi-item v-2" data-ride="carousel">
+
+        <!--Controls-->
+        <div class="controls-top">
+            <a class="btn-floating" href="#carousel-example-multi" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
+            <a class="btn-floating" href="#carousel-example-multi" data-slide="next"><i class="fas fa-chevron-right"></i></a>
+        </div>
+        <!--/.Controls-->
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-multi" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-multi" data-slide-to="1"></li>
+            <li data-target="#carousel-example-multi" data-slide-to="2"></li>
+            <li data-target="#carousel-example-multi" data-slide-to="3"></li>
+            <li data-target="#carousel-example-multi" data-slide-to="4"></li>
+            <li data-target="#carousel-example-multi" data-slide-to="5"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <div class="carousel-inner" role="listbox">
+
+            <div class="carousel-item active">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="assets\images\lemon juice cocktail.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold">Lemon Drop Fizz</h4>
+                            <p class="card-text">Enjoy this lemon flavored cocktail to add a refreshing taste to spruce up any summer day!</p>
+                            <a class="btn btn-primary btn-md btn-rounded">Try me!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="assets\images\orange juice cocktail.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold">Agent Orange</h4>
+                            <p class="card-text">Enjoy this birst of citrus to compliment your next upcoming event!</p>
+                            <a class="btn btn-primary btn-md btn-rounded">Try me!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="assets\images\strawberry cocktail.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold">Strawberry Gin and Tonic</h4>
+                            <p class="card-text">Try this fresh summer cocktail that's super quick to make!The infused flavors of the sweet berries with the gin and tonic take this drink from dry to delicious.</p>
+                            <a class="btn btn-primary btn-md btn-rounded">Try me!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="assets\images\candy-cane-martini.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold">Candy Cane Martini</h4>
+                            <p class="card-text">The candy cane martini combines all the best flavors and colors of the season! A mix of vanilla vodka, crème de cacao, and peppermint schnapps topped with a candy cane, it’s the perfect Christmas drink!</p>
+                            <a class="btn btn-primary btn-md btn-rounded">Try me!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="assets\images\4th of july cocktail.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold">Patriotic Celebration</h4>
+                            <p class="card-text">Try this festive cocktail at your next BBQ, tailgate, or fireworks fiesta to keep the patriotic spirit going all summer long!</p>
+                            <a class="btn btn-primary btn-md btn-rounded">Try me!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-12 col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="assets\images\vampire cocktail.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold">Vampire Cocktail</h4>
+                            <p class="card-text">This delicious drink would do Dracula proud. Make sure to mix up some raspberry puree to use as fake blood to have all your party guests thirsting for more!</p>
+                            <a class="btn btn-primary btn-md btn-rounded">Try me!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-
-
 
 
 
