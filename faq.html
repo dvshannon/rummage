@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../rummage/assets/css/style.css">
+    <script src="assets/js/favorites.js"></script>
+    <script src="assets/js/search.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script>
+      var config = {
+        apiKey: "AIzaSyAtrv_EENVJvgdsyfN7pmVzMnp2-n-Q2sw",
+        authDomain: "rummage-base.firebaseapp.com",
+        databaseURL: "https://rummage-base.firebaseio.com",
+        projectId: "rummage-base",
+        storageBucket: "rummage-base.appspot.com",
+        messagingSenderId: "529528576551"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Baloo+Chettan|Fjalla+One|Lobster" rel="stylesheet">
+
+  </head>
+<body>    
+
+  <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile">
+          <li><a href="landingpage.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="Favorites.html">Favorites</a></li>
+          <li><a href="Pantry.html">Pantry</a></li>
+          <li><a href="featured.html">Featured</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+  <div class="row">
+        <div class="col s12 m6">
+          <div class="card orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">The recipe given has ingredients that I did not list</span>
+              <p>Yes, this does happen.  <br>
+                The cocktail receipe integration that we use compiles many different recipes from 
+                  the ingredients that you list.  
+                  <br>
+                  Sometimes this results in an ingredient list that contains more than what you have.
+                  <br> 
+                  In this case we suggest saving the recipe to try another time, try an abbrevated version of what you do have, <br>
+                  or ask your neighbor if they have the missing ingredient.
+                  <br>
+                  We'd never tell you to go to the store, though. (yuck)
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m6">
+                <div class="card orange darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Is there a max ingredients for the search?</span>
+                    <p>
+                        Yes, you can search up to 5 individual ingredients. 
+                        <br>
+                        However, you can add the search pantry option which you can input as many items as you desire.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      </div>
+      <div class="row">
+            <div class="col s12 m6">
+              <div class="card orange darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Do I have to create a pantry list?</span>
+                  <p>
+                      Nope!
+                  </p>
+                </div>
+              </div>
+            </div>
+      </div>
+         
+
+
+      <footer class="page-footer">
+            <!-- <div class="container"> -->
+              <div class="row">
+                  <ul>
+                        <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
+                        <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+          </footer>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/favorites.js"></script>
+<script src="assets/js/search.js"></script>
+
+</html>
