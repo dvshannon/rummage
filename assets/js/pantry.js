@@ -14,7 +14,18 @@ var ingInput='';
 var pantry= [];
 var counter = 0;
 
-$('#username').on('click', )
+$('#user-btn').on('click', function(){
+    var userID = $('#username').val().trim();
+    database.ref().set({
+        user: userID
+    });
+    database.ref(user).set({
+        pantry: ''
+    })
+
+    // console.log(snapshot.value);
+})
+
 
 $('#store-btn').on('click', function(){
     event.preventDefault();
@@ -35,7 +46,10 @@ $('#store-btn').on('click', function(){
 
     $('#user-ingredient').val('');
 
-    database.ref().push(pantry[counter]);
+
+
+    
+    database.ref().push(ingInput);
     counter++;
 
 });
@@ -46,7 +60,7 @@ database.ref().on("child_added", function(snapshot) {
     var sv = snapshot.val();
 
     // Console.loging the last user's data
-    console.log("Items currently in the pantry: " + sv);
+    console.log(sv);
 
     // Handle the errors
   }, function(errorObject) {
@@ -54,15 +68,15 @@ database.ref().on("child_added", function(snapshot) {
   });
 
 
-  // Firebase watcher .on("child_added"
-database.ref().on("value", function(snapshot) {
-    // storing the snapshot.val() in a variable for convenience
-    var sv = snapshot.val();
+//   // Firebase watcher .on("child_added"
+// database.ref().on("value", function(snapshot) {
+//     // storing the snapshot.val() in a variable for convenience
+//     var sv = snapshot.val();
 
-    // Console.loging the last user's data
-    console.log("Items currently in the pantry: " + sv);
+//     // Console.loging the last user's data
+//     console.log(sv);
 
-    // Handle the errors
-  }, function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
+//     // Handle the errors
+//   }, function(errorObject) {
+//     console.log("Errors handled: " + errorObject.code);
+//   });
