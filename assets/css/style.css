@@ -3,8 +3,20 @@ body{
     background-color: #765285;
     color: #feb47b;
     text-align: center;
-    
+ 
 }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+  
 
 ul {
     list-style-type: inline;
@@ -54,3 +66,22 @@ ul {
   .card {
     background-color: #765258;
   }
+  .carousel{
+    width: 100%;
+    height: 50px;
+    z-index: 0;
+    /* padding: 400px; */
+    /* border:
+    margin:  */
+}
+
+img {
+  width: 100%;
+  height: 375px;
+}
+
+#logo {
+  width: 30%;
+  height: 200px;
+  ;
+}
