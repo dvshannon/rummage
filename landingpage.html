@@ -24,7 +24,6 @@
 
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
  
   </head>
 <body>    
@@ -40,7 +39,7 @@
       </div>
     </nav>
 
-    
+
 
 <p>
     <h1>Welcome to Rummage</h1>
@@ -50,8 +49,22 @@
 
   <img id="logo" src="./assets/images/RUMMAGE.jpeg" alt="logo" >
     </div>
+<br>
+    <div id="ing-header">Add Ingredients: </div>
+    <input id="ingredients-input" type="text">
+    <button id="add-ingredients" class="btn">Add Ingredients</button>
+    <button id="pantry-button" class="btn">Pantry</button>
+    <button id="search-button" class= "btn">Search</button>
+    <!-- #pantry-div is to display pantry ingredients by the search -->
+    <!-- Doesn't necessarily have to display as a div. Could be something else. -->
+    <div id="pantry-div"></div>
+    <!-- #ingredients is where added ingredients for search will display and be removed from-->
+    <div id="ingredients"></div>
+    <!-- #results is where search results ware displaying, but we'll have to change this -->
+    <!-- to work with Carousel JS -->
+    <div id="results"></div>
+
   <footer class="page-footer">
-      <!-- <div class="container"> -->
         <div class="row">
             <ul>
                   <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
