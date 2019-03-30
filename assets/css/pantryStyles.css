@@ -1,3 +1,4 @@
-.pantrysearch{
-    @extend .blue, .lighten-4;
+#user-ingredient {
+    background: white;
+    width: 200px;
 }
