@@ -1,10 +1,9 @@
-// Instantiate the Bootstrap carousel
 $(document).ready(function() {
-    $('.carousel').carousel({
-        interval: 2000
-    })
-});
-
+    M.updateTextFields();
+  });
+  $(document).ready(function(){
+    $('select').formSelect();
+     
 // for every slide in carousel, copy the next slide's item in the slide.
 // Do the same for the next, next item.
 // $('.carousel-item').each(function() {

@@ -106,10 +106,4 @@ $(document).on('click', '.ingredient', function(){
     $(this).remove();
     
 })
-//this is for contact page
-$(document).ready(function() {
-    M.updateTextFields();
-  });
-  $(document).ready(function(){
-    $('select').formSelect();
-     
+

@@ -22,7 +22,7 @@ $('#user-btn').on('click', function(){
     database.ref(user).set({
         pantry: ''
     })
-
+ 
     // console.log(snapshot.value);
 })
 
@@ -39,8 +39,9 @@ $('#store-btn').on('click', function(){
     var addToSearch = $("<button id='addSearchBtn' class='btn'>" + "<i class='fas fa-search-plus'></i>" + "</button>");
     ingredientDiv.append(addToSearch);
 
-    var pantryRemove = $("<button id='removeFromPantry' class='btn'>" + "<i class='fas fa-minus'></i>" + "</button>");
+    var pantryRemove = $("<button class='removeFromPantry btn'>" + "<i class='fas fa-minus'></i>" + "</button>");
     ingredientDiv.append(pantryRemove);
+
     
     $('.pantry').append(ingredientDiv);
 
@@ -54,13 +55,34 @@ $('#store-btn').on('click', function(){
 
 });
 
+$(document).on("click", ".removeFromPantry", function(event){
+  event.preventDefault();
+  console.log(this);
+console.log ("this should remove");
+$(this).closest(".stored-ingredient").remove();
+console.log(pantry, "pantry");
+
+var oneingredient = $(this).closest(".stored-ingredient").attr("data-ingredient");
+var index;
+
+for (i = 0; i < pantry.length; i++){
+  if (pantry[i] === oneingredient){
+    index = i;
+  }
+}
+console.log (oneingredient);
+console.log (index);
+pantry.splice(index, 1);
+console.log(pantry, "this should delete");
+})
+
 // Firebase watcher .on("child_added"
 database.ref().on("child_added", function(snapshot) {
     // storing the snapshot.val() in a variable for convenience
     var sv = snapshot.val();
 
     // Console.loging the last user's data
-    console.log(sv);
+    // console.log(sv);
 
     // Handle the errors
   }, function(errorObject) {
