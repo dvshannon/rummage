@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,71 +12,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Baloo+Chettan|Fjalla+One|Lobster" rel="stylesheet">
     <script>
-      var config = {
-        apiKey: "AIzaSyAtrv_EENVJvgdsyfN7pmVzMnp2-n-Q2sw",
-        authDomain: "rummage-base.firebaseapp.com",
-        databaseURL: "https://rummage-base.firebaseio.com",
-        projectId: "rummage-base",
-        storageBucket: "rummage-base.appspot.com",
-        messagingSenderId: "529528576551"
-      };
-      firebase.initializeApp(config);
+        var config = {
+            apiKey: "AIzaSyAtrv_EENVJvgdsyfN7pmVzMnp2-n-Q2sw",
+            authDomain: "rummage-base.firebaseapp.com",
+            databaseURL: "https://rummage-base.firebaseio.com",
+            projectId: "rummage-base",
+            storageBucket: "rummage-base.appspot.com",
+            messagingSenderId: "529528576551"
+        };
+        firebase.initializeApp(config);
     </script>
 
- 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
-  </head>
-<body>    
-  <nav>
-      <div class="nav-wrapper">
-        <ul id="nav-mobile">
-          <li><a href="landingpage.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="Favorites.html">Favorites</a></li>
-          <li><a href="Pantry.html">Pantry</a></li>
-          <li><a href="featured.html">Featured</a></li>
-        </ul>
-      </div>
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile">
+                <li><a href="landingpage.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Favorites.html">Favorites</a></li>
+                <li><a href="Pantry.html">Pantry</a></li>
+                <li><a href="featured.html">Featured</a></li>
+            </ul>
+        </div>
     </nav>
 
 
 
-<p>
-    <h1>Welcome to Rummage</h1>
- </p>   
+    <p>
+        <h1>Welcome to Rummage</h1>
+    </p>
     <br>
     <div class="col s12 m5">
 
-  <img id="logo" src="./assets/images/RUMMAGE.jpeg" alt="logo" >
+        <img id="logo" src="./assets/images/RUMMAGE.jpeg" alt="logo">
     </div>
-<br>
-    <div id="ing-header">Add Ingredients: </div>
-    <input id="ingredients-input" type="text">
-    <button id="add-ingredients" class="btn">Add Ingredients</button>
-    <button id="pantry-button" class="btn">Pantry</button>
-    <button id="search-button" class= "btn">Search</button>
-    <!-- #pantry-div is to display pantry ingredients by the search -->
-    <!-- Doesn't necessarily have to display as a div. Could be something else. -->
-    <div id="pantry-div"></div>
+    <br>
+    <div id="ing-header">ADD INGRDIENTS!:</div>
+    <div>
+        <input id="ingredients-input" type="text" style="text-align:center;">
+    </div>
+    <!-- <button id="add-ingredients" class="btn">Add Ingredients</button> -->
+    <!-- <button id="pantry-button" class="btn">Pantry</button> -->
+    <div style="text-align:center;">
+        <button id="add-ingredients" class="btn drinkCard">Add Ingredients</button>
+    </div>
+
+    <div style="text-align:center;">
+        <button id="search-button" class="btn drinkCard">Search</button>
+    </div>
+
+    <!-- #pantry-div is to display pantry ingredients by the search
+
+
+    <!Doesn't necessarily have to display as a div. Could be something else. -->
+    <!-- <div id="pantry-div"></div> -->
     <!-- #ingredients is where added ingredients for search will display and be removed from-->
     <div id="ingredients"></div>
     <!-- #results is where search results ware displaying, but we'll have to change this -->
     <!-- to work with Carousel JS -->
     <div id="results"></div>
 
-  <footer class="page-footer">
+    <footer class="page-footer">
         <div class="row">
             <ul>
-                  <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
-                  <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
+                <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
             </ul>
-          </div>
+        </div>
         </div>
     </footer>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/js/favorites.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/pantry.js"></script>
