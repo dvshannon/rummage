@@ -10,47 +10,58 @@ var config = {
 
   var database = firebase.database();
 
-var ingInput='';
+  
+
+var ingInput;
 var pantry= [];
+var usersRef;
+var userID;
+// var newUserRef;
+var  userKey;
+var thisUserPantry;
+var newUser = {};
 var counter = 0;
 
-$('#user-btn').on('click', function(){
-    var userID = $('#username').val().trim();
-    database.ref().set({
-        user: userID
-    });
-    database.ref(user).set({
-        pantry: ''
-    })
+$('#sign-up-btn').on('click', function(){
+    
+    if(userID === undefined) {
+        userID = $('#sign-up').val().trim();
+        newUser = {
+            username: userID,
+            pantry: [],
+            favorites: ['']
+        }
 
-    // console.log(snapshot.value);
-})
+        usersRef = database.ref('users');
+
+        var addIng = $("<br><span>Add Ingredient: </span><div id='add-to-pantry'><input id='user-ingredient' type='text'><button id='store-btn' class='btn'>+</btn></div>");
+        $('#add-user').append(addIng);
+
+        $('#sign-up').val('');
+        } else {
+            return false;
+        }
+    
+
+});
 
 
-$('#store-btn').on('click', function(){
+$(document).on('click', '#store-btn', function(){
     event.preventDefault();
 
     ingInput = $('#user-ingredient').val().trim();
-    pantry.push(ingInput);
-    
-    var ingredientDiv = $("<div class='stored-ingredient'>" + ingInput + "</div>");
-    ingredientDiv.attr('data-ingredient', ingInput);
+    newUser.pantry.push(ingInput);
+    console.log(newUser.pantry);
 
-    var addToSearch = $("<button id='addSearchBtn' class='btn'>" + "<i class='fas fa-search-plus'></i>" + "</button>");
-    ingredientDiv.append(addToSearch);
-
-    var pantryRemove = $("<button id='removeFromPantry' class='btn'>" + "<i class='fas fa-minus'></i>" + "</button>");
-    ingredientDiv.append(pantryRemove);
-    
-    $('.pantry').append(ingredientDiv);
+    thisUserPantry = database.ref('users/' + userID + '/pantry');
+    thisUserPantry.set(newUser.pantry);
 
     $('#user-ingredient').val('');
 
-
-
-    
-    database.ref().push(ingInput);
-    counter++;
+    var ingDiv = $("<div class='ingDiv'>" + ingInput +  "</div>");
+    var pantryRmvBtn =  $("<button class='remove-from-pantry btn'>x</button>");
+    ingDiv.append(pantryRmvBtn);
+    $('#add-user').append(ingDiv);
 
 });
 
@@ -66,17 +77,3 @@ database.ref().on("child_added", function(snapshot) {
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
-
-
-//   // Firebase watcher .on("child_added"
-// database.ref().on("value", function(snapshot) {
-//     // storing the snapshot.val() in a variable for convenience
-//     var sv = snapshot.val();
-
-//     // Console.loging the last user's data
-//     console.log(sv);
-
-//     // Handle the errors
-//   }, function(errorObject) {
-//     console.log("Errors handled: " + errorObject.code);
-//   });
