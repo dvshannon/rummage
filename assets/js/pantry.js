@@ -10,70 +10,84 @@ var config = {
 
   var database = firebase.database();
 
-var ingInput='';
+  
+
+var ingInput;
 var pantry= [];
+var usersRef;
+var userID;
+// var newUserRef;
+var  userKey;
+var thisUserPantry;
+var newUser = {};
 var counter = 0;
 
-$('#user-btn').on('click', function(){
-    var userID = $('#username').val().trim();
-    database.ref().set({
-        user: userID
-    });
-    database.ref(user).set({
-        pantry: ''
-    })
- 
-    // console.log(snapshot.value);
-})
+$('#sign-up-btn').on('click', function(){
+    
+    if(userID === undefined) {
+        userID = $('#sign-up').val().trim();
+        newUser = {
+            username: userID,
+            pantry: [],
+            favorites: ['']
+        }
+
+        usersRef = database.ref('users');
+
+        var addIng = $("<br><span>Add Ingredient: </span><div id='add-to-pantry'><input id='user-ingredient' type='text'><button id='store-btn' class='btn'>+</btn></div>");
+        $('#add-user').append(addIng);
+
+        $('#sign-up').val('');
+        } else {
+            return false;
+        }
+    
+
+});
 
 
-$('#store-btn').on('click', function(){
+$(document).on('click', '#store-btn', function(){
     event.preventDefault();
 
     ingInput = $('#user-ingredient').val().trim();
-    pantry.push(ingInput);
+    newUser.pantry.push(ingInput);
+    console.log(newUser.pantry);
+
+    thisUserPantry = database.ref('users/' + userID + '/pantry');
+    thisUserPantry.set(newUser.pantry);
     
-    var ingredientDiv = $("<div class='stored-ingredient'>" + ingInput + "</div>");
-    ingredientDiv.attr('data-ingredient', ingInput);
-
-    var addToSearch = $("<button id='addSearchBtn' class='btn'>" + "<i class='fas fa-search-plus'></i>" + "</button>");
-    ingredientDiv.append(addToSearch);
-
-    var pantryRemove = $("<button class='removeFromPantry btn'>" + "<i class='fas fa-minus'></i>" + "</button>");
-    ingredientDiv.append(pantryRemove);
-
-    
-    $('.pantry').append(ingredientDiv);
 
     $('#user-ingredient').val('');
 
-
-
-    
-    database.ref().push(ingInput);
-    counter++;
+    var ingDiv = $("<div class='ingDiv stored-ingredient'>" + ingInput +  "</div>");
+    var pantryRemove = $("<button class='removeFromPantry btn'>" + "<i class='fas fa-minus'></i>" + "</button>");
+    ingDiv.append(pantryRemove);
+    $('.pantry').append(ingDiv);
 
 });
 
 $(document).on("click", ".removeFromPantry", function(event){
   event.preventDefault();
   console.log(this);
-console.log ("this should remove");
-$(this).closest(".stored-ingredient").remove();
-console.log(pantry, "pantry");
+  console.log ("this should remove");
+  $(this).closest(".stored-ingredient").remove();
+  console.log(newUser.pantry, "pantry");
 
-var oneingredient = $(this).closest(".stored-ingredient").attr("data-ingredient");
-var index;
+  var oneingredient = $(this).closest(".stored-ingredient").attr("data-ingredient");
+  var index;
 
-for (i = 0; i < pantry.length; i++){
-  if (pantry[i] === oneingredient){
-    index = i;
+  //Don't know what the below loop is supposed to do
+  //doesn't seem to be doing anything at the moment
+  for (i = 0; i < newUser.pantry.length; i++){
+    if (newUser.pantry[i] === oneingredient){
+      index = i;
+    }
   }
-}
-console.log (oneingredient);
-console.log (index);
-pantry.splice(index, 1);
-console.log(pantry, "this should delete");
+  console.log (oneingredient);
+  console.log (index);
+  newUser.pantry.splice(index, 1);
+  // console.log(newUser.pantry, "this should delete"); Working... this can be deleted.
+  thisUserPantry.set(newUser.pantry);
 })
 
 // Firebase watcher .on("child_added"
@@ -88,17 +102,3 @@ database.ref().on("child_added", function(snapshot) {
   }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
-
-
-//   // Firebase watcher .on("child_added"
-// database.ref().on("value", function(snapshot) {
-//     // storing the snapshot.val() in a variable for convenience
-//     var sv = snapshot.val();
-
-//     // Console.loging the last user's data
-//     console.log(sv);
-
-//     // Handle the errors
-//   }, function(errorObject) {
-//     console.log("Errors handled: " + errorObject.code);
-//   });
