@@ -55,15 +55,40 @@ $(document).on('click', '#store-btn', function(){
 
     thisUserPantry = database.ref('users/' + userID + '/pantry');
     thisUserPantry.set(newUser.pantry);
+    
 
     $('#user-ingredient').val('');
 
-    var ingDiv = $("<div class='ingDiv'>" + ingInput +  "</div>");
-    var pantryRmvBtn =  $("<button class='remove-from-pantry btn'>x</button>");
-    ingDiv.append(pantryRmvBtn);
-    $('#add-user').append(ingDiv);
+    var ingDiv = $("<div class='ingDiv stored-ingredient'>" + ingInput +  "</div>");
+    var pantryRemove = $("<button class='removeFromPantry btn'>" + "<i class='fas fa-minus'></i>" + "</button>");
+    ingDiv.append(pantryRemove);
+    $('.pantry').append(ingDiv);
 
 });
+
+$(document).on("click", ".removeFromPantry", function(event){
+  event.preventDefault();
+  console.log(this);
+  console.log ("this should remove");
+  $(this).closest(".stored-ingredient").remove();
+  console.log(newUser.pantry, "pantry");
+
+  var oneingredient = $(this).closest(".stored-ingredient").attr("data-ingredient");
+  var index;
+
+  //Don't know what the below loop is supposed to do
+  //doesn't seem to be doing anything at the moment
+  for (i = 0; i < newUser.pantry.length; i++){
+    if (newUser.pantry[i] === oneingredient){
+      index = i;
+    }
+  }
+  console.log (oneingredient);
+  console.log (index);
+  newUser.pantry.splice(index, 1);
+  // console.log(newUser.pantry, "this should delete"); Working... this can be deleted.
+  thisUserPantry.set(newUser.pantry);
+})
 
 // Firebase watcher .on("child_added"
 database.ref().on("child_added", function(snapshot) {
@@ -71,7 +96,7 @@ database.ref().on("child_added", function(snapshot) {
     var sv = snapshot.val();
 
     // Console.loging the last user's data
-    console.log(sv);
+    // console.log(sv);
 
     // Handle the errors
   }, function(errorObject) {
