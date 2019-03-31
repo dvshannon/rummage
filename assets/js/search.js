@@ -107,14 +107,3 @@ $(document).on('click', '.ingredient', function(){
     
 })
 
-//   -----------------------------------------------------------MAPS------------------------------------------------------
-
-var map;
-function initializeMap() {
-    var center = new google.maps.LatLng(35.789600, -78.668460);
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: center,
-        zoom: 11
-    });
-}
-

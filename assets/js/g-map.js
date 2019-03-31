@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyBsKhKr6uyvFGZE4OQRs1kyAcOv0QT7OzE&callback=initializeMap&libraries=places" async defer ></script>
-</head>
 
-<body>
-    <style>
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
-
-    <div id="map">
-
-    </div>
-
-    
-
-
-    <script>
     var map;
     var service;
     var infowindow;
@@ -92,7 +67,3 @@ function clearResults(markers) {
     }
     markers = [];
 }
-
-    </script>
-</body>
-</html>
