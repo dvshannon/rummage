@@ -106,10 +106,15 @@ $(document).on('click', '.ingredient', function(){
     $(this).remove();
     
 })
-//this is for contact page
-$(document).ready(function() {
-    M.updateTextFields();
-  });
-  $(document).ready(function(){
-    $('select').formSelect();
-     
+
+//   -----------------------------------------------------------MAPS------------------------------------------------------
+
+var map;
+function initializeMap() {
+    var center = new google.maps.LatLng(35.789600, -78.668460);
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: center,
+        zoom: 11
+    });
+}
+
