@@ -130,3 +130,10 @@ img {
     background: white;
     width: 200px;
 }
+
+/* google map */
+
+#map {
+  height: 300px;
+  width: 100%;
+}
