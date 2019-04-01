@@ -43,10 +43,6 @@ li a {
 }
 
 
-/* li a:hover {
-    background-color: #f5ab99;
-  } */
-
 .footer {
     position: fixed;
     left: 0;
@@ -61,43 +57,65 @@ li a {
     color: #feb47b;
 }
 
-.card {
-    background-color: #765258;
-}
-
-
-
-
-img {
-    width: 100%;
-    height: 375px;
-}
-
 #logo {
-<<<<<<< HEAD
-  width: 30%;
-  height: 200px;
-}
-
-#map {
-  width: 100%;
-  height: 400px;
-=======
     width: 30%;
     height: 200px;
-    ;
 }
 
+
+/* Search on Landing Page */
+#ingredients-input {
+    float: left;
+    background: white;
+    width: 50%;
+}
+#add-ingredients {
+    float: left;
+    height: 46px;
+}
 #search-button {
     width: 100px;
->>>>>>> b74376e72ebd8b815874b506a3b988c9ac7722b1
+    height: 46px;
+    float: left;
+}
+#ingredients{
+    clear: both;
+}
+.ingredient {
+    display: inline;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #f5ab99;
+    border-radius: 2px;
 }
 
-#ingredients-input {
-    background: white;
+/* Results on Landing Page */
+#results {
+    margin-top: 15px;
+}
+.drinkCard {
+    display: inline-block;
     width: 200px;
+    min-height: 300px;
+    height: auto;
+    margin: 25px;
+    background-color: #f5ab99;
+    color: white;
+    border: 2px solid #f5ab99;
+    border-radius: 3px;
+}
+.drinkName {
+    font-size: 1.5rem;
+    background-color: ;
+    color: white;
+
+}
+.imgDrink {
+    width: 100%;
 }
 
+
+/* ... */
 #user-ingredient {
     background: white;
     width: 200px;

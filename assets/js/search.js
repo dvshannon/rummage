@@ -54,8 +54,6 @@ $('#search-button').on('click', function() {
             //Find and Select Drinks
             var randomizeDrink = Math.floor(Math.random() * drinkResults.length);
             var drink = drinkResults[randomizeDrink];
-
-            
             
 
             selectedDrinks.push(drink);
@@ -117,7 +115,7 @@ $(document).on('click', '.drinkCard', function() {
                 console.log(count + '= ' + key + ': ' + searchedDrink[key]);
 
                 var drinkIngDiv = $("<div class='drinkIngredients'>");
-                var itemDiv = $("<p class='drinkIng'>" + searchedDrink[key] + "</p>");
+                var itemDiv = $("<span class='drinkIng'>" + searchedDrink[key] + ", " + "</span>");
                 drinkIngDiv.append(itemDiv);
                 self.append(drinkIngDiv);
                 
@@ -142,11 +140,5 @@ $(document).on('click', '.ingredient', function() {
     counter--;
 
     $(this).remove();
-<<<<<<< HEAD
-    
-})
-
-=======
 
 });
->>>>>>> b74376e72ebd8b815874b506a3b988c9ac7722b1
