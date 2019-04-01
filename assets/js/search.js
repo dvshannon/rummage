@@ -142,11 +142,8 @@ $(document).on('click', '.ingredient', function() {
     counter--;
 
     $(this).remove();
-<<<<<<< HEAD
     
 })
 
-=======
 
-});
->>>>>>> b74376e72ebd8b815874b506a3b988c9ac7722b1
+
