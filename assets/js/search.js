@@ -38,7 +38,7 @@ $('#search-button').on('click', function() {
     console.log('button working');
     apiKey = '3587444';
 
-    var queryURL = 'https://www.thecocktaildb.com/api/json/v2/' + apiKey + '/filter.php?i=' + ingredients.join(",");
+    var queryURL = 'https://www.thecocktaildb.com/api/json/v2/' + apiKey + '/filter.php?i=';
 
     $.ajax({
         url: queryURL,
@@ -150,23 +150,23 @@ var favArray = [];
 $(document.body).on('click', '.fa-heart', function(){
     $('.fas').parent().push(favArray);
     console.log(this);
-    $('.fav-drink-section').append(favArray);
-
-    database.ref().push({
-        favArray: favArray
-    });
+    localStorage.setItem(favArray);
+    $('.fav-drink-section').append(localStorage.getItem(favArray));
+    // database.ref().push({
+    //     favArray: favArray
+    // });
 });
-database.ref().on("child_added", function(snapshot) {
-    // storing the snapshot.val() in a variable for convenience
-    var sv = snapshot.val();
+// database.ref().on("child_added", function(snapshot) {
+//     // storing the snapshot.val() in a variable for convenience
+//     var sv = snapshot.val();
 
-    // Console.loging the last user's data
-    console.log(sv.favArray);
+//     // Console.loging the last user's data
+//     console.log(sv.favArray);
 
-    // Change the HTML to reflect
-    $(".fav-drink-section").append(sv.favArray);
+//     // Change the HTML to reflect
+//     $(".fav-drink-section").append(sv.favArray);
 
-    // Handle the errors
-  }, function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
+//     // Handle the errors
+//   }, function(errorObject) {
+//     console.log("Errors handled: " + errorObject.code);
+//   });
