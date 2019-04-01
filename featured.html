@@ -11,7 +11,6 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
     <script>
-        // Initialize Firebase
         var config = {
           apiKey: "AIzaSyAtrv_EENVJvgdsyfN7pmVzMnp2-n-Q2sw",
           authDomain: "rummage-base.firebaseapp.com",
@@ -37,60 +36,10 @@
                 </div>
               </nav>
 
-              <div class="container">
-                  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                  <script type="text/javascript">
-
-                    var searchAPI = function() {
-                      var queryURL = 'https://www.thecocktaildb.com/api/json/v2/' + apiKey + '/lookup.php?i=' + drinkID;
-                      console.log(queryURL)
-                      $.ajax({
-                        url: queryURL,
-                        method: "GET"
-                      }).then(function(response) {
-                        createRow(response);
-                      });
-                    };
-                
-                    // Search the OMDB API for the following movies, and append table rows for each
-                    searchAPI("Pina Colada");
+ <div id="featuredDrink"></div>
 
 
-        //     <!-- <div class="row">
-        //             <div class="col s12 m5">
-        //                 <div class="card mb-2">
-        //                     <div class="card">
-                                
-        //                         <div class="card-image">
-        //                     <img class="card-img-top" src="assets\images\lemon juice cocktail.jpeg" alt="Card image cap">
-        //                     <span class= "card-title" style="color: #ff7e5f">Lemon Drop Fizz </span>
-        //                         </div>
-        //                         <div class="card-content">
-        //                         <p>Enjoy this lemon flavored cocktail to add a refreshing taste to spruce up any summer day!</p>
-        //                         </div>
-        //                         <div class="card-action">
-        //                         <a href="#">Try me!</a>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //         <div class="col s12 m5">
-        //                 <div class="card mb-2">
-        //                     <div class="card">
-        //                         <div class="card-image">
-        //                     <img class="card-img-top" src="assets\images\orange juice cocktail.jpeg" alt="Card image cap">
-        //                     <span class= "card-title" style="color: #ff7e5f">Agent Orange</span>
-        //                         </div>
-        //                         <div class="card-content">
-        //                         <p>Enjoy this burst of tangy citrus to compliment your next upcoming social event!</p>
-        //                         </div>
-        //                         <div class="card-action">
-        //                         <a href="#">Try me!</a>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        // </div>
+        
         </main>
         <footer class="page-footer">
                   <div class="row">
@@ -98,11 +47,11 @@
                       </ul>
                     </div>
                   </div>
-              </footer> -->
+              </footer> 
 </body>
-<script src="assets/js/favorites.js"></script>
-<script src="assets/js/search.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="assets/js/featured.js"></script>
+
 
 </html>
