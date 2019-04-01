@@ -11,6 +11,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Baloo+Chettan|Fjalla+One|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script>
         var config = {
             apiKey: "AIzaSyAtrv_EENVJvgdsyfN7pmVzMnp2-n-Q2sw",
@@ -29,69 +30,53 @@
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <ul id="nav-mobile">
-                <li><a href="index.html">Home</a></li>
+    <main>
+        <nav>
+            <div class="nav-wrapper">
+                <ul id="nav-mobile">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Favorites.html">Favorites</a></li>
+                    <li><a href="Pantry.html">Pantry</a></li>
+                    <li><a href="featured.html">Featured</a></li>
+                </ul>
+            </div>
+        </nav>
 
-                <li><a href="about.html">About</a></li>
-                <li><a href="Favorites.html">Favorites</a></li>
-                <li><a href="Pantry.html">Pantry</a></li>
-                <li><a href="featured.html">Featured</a></li>
-            </ul>
-        </div>
-    </nav>
 
-
-
-    <p>
-        <h1>Welcome to Rummage</h1>
-    </p>
-    <br>
-    <div class="col s12 m5">
-
-        <img id="logo" src="./assets/images/RUMMAGE.jpeg" alt="logo">
+        <div class="container">
+            <p>
+                <h1>Welcome to Rummage</h1>
+            </p>
+            <br>
+            <div class="col s12 m5">
+                <img id="logo" src="./assets/images/RUMMAGE.jpeg" alt="logo">
+            </div>
+            <br>
+            <div id="ing-header">ADD INGREDIENTS!:</div>
+            <div class="search-bar">
+                <input id="ingredients-input" type="text" style="text-align:center;">
+                <button id="add-ingredients" class="btn">Add Ingredients</button>
+                <button id="search-button" class="btn">Search</button>
+            </div>
+            <div id="ingredients"></div>
+            <div id="results"></div>
+        </main>
+        <footer class="page-footer">
+            <div class="row">
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
+                    <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
-    <br>
-    <div id="ing-header">ADD INGREDIENTS!:</div>
-    <div>
-        <input id="ingredients-input" type="text" style="text-align:center;">
-    </div>
-    <!-- <button id="add-ingredients" class="btn">Add Ingredients</button> -->
-    <!-- <button id="pantry-button" class="btn">Pantry</button> -->
-    <div style="text-align:center;">
-        <button id="add-ingredients" class="btn drinkCard">Add Ingredients</button>
-    </div>
 
-    <div style="text-align:center;">
-        <button id="search-button" class="btn drinkCard">Search</button>
-    </div>
-
-    <!-- #pantry-div is to display pantry ingredients by the search
-
-
-    Doesn't necessarily have to display as a div. Could be something else.
-    <!-- <div id="pantry-div"></div> -->
-    <!-- #ingredients is where added ingredients for search will display and be removed from-->
-    <div id="ingredients"></div>
-    <!-- #results is where search results ware displaying, but we'll have to change this -->
-    <!-- to work with Carousel JS -->
-    <div id="results"></div>
-
-    <footer class="page-footer">
-        <div class="row">
-            <ul>
-                <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
-                <li><a class="grey-text text-lighten-3" href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        </div>
-    </footer>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/js/favorites.js"></script>
-<script src="assets/js/search.js"></script>
-<script src="assets/js/pantry.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./assets/js/search.js"></script>
+<script src="./assets/js/favorites.js"></script>
+<script src="./assets/js/pantry.js"></script>
 </html>
