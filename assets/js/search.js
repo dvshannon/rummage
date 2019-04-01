@@ -140,13 +140,8 @@ $(document).on('click', '.ingredient', function() {
     counter--;
 
     $(this).remove();
-<<<<<<< HEAD
     
 })
-
-
-
-=======
-
+    $(this).remove();  
+})
 });
->>>>>>> fe8dede5704cce0e692a18636f959ee230f3b719

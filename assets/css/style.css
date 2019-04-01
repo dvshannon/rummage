@@ -55,7 +55,6 @@ li a {
     color: #feb47b;
 }
 
-<<<<<<< HEAD
 .card {
     background-color: #765258;
 }
@@ -68,8 +67,6 @@ img {
     height: 100%;
 }
 
-=======
->>>>>>> fe8dede5704cce0e692a18636f959ee230f3b719
 #logo {
     width: 30%;
     height: 200px;
@@ -88,8 +85,6 @@ img {
 }
 #search-button {
     width: 100px;
-<<<<<<< HEAD
-=======
     height: 46px;
     float: left;
 }
@@ -102,7 +97,6 @@ img {
     padding: 5px;
     border: 1px solid #f5ab99;
     border-radius: 2px;
->>>>>>> fe8dede5704cce0e692a18636f959ee230f3b719
 }
 
 /* Results on Landing Page */
