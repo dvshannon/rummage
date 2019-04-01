@@ -1,22 +1,18 @@
-body{
-  font-family: 'Fjalla One', sans-serif;
+body {
+    font-family: 'Fjalla One', sans-serif;
     background-color: #765285;
     color: #feb47b;
     text-align: center;
- 
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+
 
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
-
-  
 
 ul {
     list-style-type: inline;
@@ -24,32 +20,34 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #f5ab99;
+}
 
-  }
-  
-  li {
+li {
     float: right;
     text-decoration: none;
     list-style: none;
-  }
-  
-  li a {
+}
+
+li a {
     display: block;
     color: #351c4d;
     text-align: center;
     padding: 14px 16px;
-  }
-  
-  .center {
+}
+
+.center {
     display: block;
     /* margin-left: auto;
     margin-right: auto; */
     width: 50%;
-  }
-  /* li a:hover {
+}
+
+
+/* li a:hover {
     background-color: #f5ab99;
   } */
-  .footer {
+
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -57,30 +55,26 @@ ul {
     background-color: #f5ab99;
     color: white;
     text-align: center;
-  }
-
-  .p {
-    color: #feb47b;
-  }
-
-  .card {
-    background-color: #765258;
-  }
-  .carousel{
-    width: 100%;
-    height: 50px;
-    z-index: 0;
-    /* padding: 400px; */
-    /* border:
-    margin:  */
 }
 
+.p {
+    color: #feb47b;
+}
+
+.card {
+    background-color: #765258;
+}
+
+
+
+
 img {
-  width: 100%;
-  height: 375px;
+    width: 100%;
+    height: 375px;
 }
 
 #logo {
+<<<<<<< HEAD
   width: 30%;
   height: 200px;
 }
@@ -88,4 +82,23 @@ img {
 #map {
   width: 100%;
   height: 400px;
+=======
+    width: 30%;
+    height: 200px;
+    ;
+}
+
+#search-button {
+    width: 100px;
+>>>>>>> b74376e72ebd8b815874b506a3b988c9ac7722b1
+}
+
+#ingredients-input {
+    background: white;
+    width: 200px;
+}
+
+#user-ingredient {
+    background: white;
+    width: 200px;
 }
