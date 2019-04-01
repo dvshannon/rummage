@@ -25,6 +25,7 @@ var counter = 0;
 $('#sign-up-btn').on('click', function(){
     
     if(userID === undefined) {
+        alert('hello!');
         userID = $('#sign-up').val().trim();
         newUser = {
             username: userID,

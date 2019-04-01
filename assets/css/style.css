@@ -54,12 +54,17 @@ li a {
 }
 
 .p {
-    color: #feb47b;
+    color: white;
 }
 
 #logo {
     width: 30%;
     height: 200px;
+}
+/* Sign-Up */
+#sign-up {
+    color: white;
+    font-size: 1.5rem;
 }
 
 
@@ -108,10 +113,12 @@ li a {
     font-size: 1.5rem;
     background-color: ;
     color: white;
-
 }
 .imgDrink {
     width: 100%;
+}
+.favorite {
+    font-size: 1.5rem;
 }
 
 
