@@ -139,6 +139,9 @@ $(document).on('click', '.ingredient', function() {
 
     counter--;
 
+    $(this).remove();
+    
+})
     $(this).remove();  
 })
 });
