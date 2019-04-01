@@ -74,7 +74,6 @@ img {
 }
 
 #logo {
-<<<<<<< HEAD
   width: 30%;
   height: 200px;
 }
@@ -82,15 +81,12 @@ img {
 #map {
   width: 100%;
   height: 400px;
-=======
     width: 30%;
     height: 200px;
-    ;
 }
 
 #search-button {
     width: 100px;
->>>>>>> b74376e72ebd8b815874b506a3b988c9ac7722b1
 }
 
 #ingredients-input {
@@ -102,3 +98,4 @@ img {
     background: white;
     width: 200px;
 }
+

@@ -46,7 +46,7 @@ function initializeMap(request) {
     service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
     google.maps.event.addListener(map, 'rightclick', function(event) {
-        map.setCenter(event.LatLng)
+        map.setCenter(event.center)
         clearResults(markers)
         var request = {
         location: center,
