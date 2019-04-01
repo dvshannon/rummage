@@ -13,6 +13,7 @@
 var database = firebase.database();
 var ingredients = [];
 var counter = 0;
+var apiKey = '3587444';
 
 //---------------------------------------- On Click Functions ---------------------------------------------------------
 $('#add-ingredients').on('click', function() {
@@ -35,7 +36,7 @@ $('#add-ingredients').on('click', function() {
 
 $('#search-button').on('click', function() {
     console.log('button working');
-    var apiKey = '3587444';
+    apiKey = '3587444';
 
     var queryURL = 'https://www.thecocktaildb.com/api/json/v2/' + apiKey + '/filter.php?i=' + ingredients.join(",");
 
@@ -46,6 +47,7 @@ $('#search-button').on('click', function() {
         var drinkResults = response.drinks;
         var selectedDrinks = [];
         var limitFilter = 4;
+        
 
 
         for (var i = 0; i < limitFilter; i++) {
@@ -53,11 +55,16 @@ $('#search-button').on('click', function() {
             var randomizeDrink = Math.floor(Math.random() * drinkResults.length);
             var drink = drinkResults[randomizeDrink];
 
+            
+            
+
             selectedDrinks.push(drink);
 
             //Make Drink Card
             var drinkCard = $('<div class="drinkCard">');
+            var drinkID = drink.idDrink;
             drinkCard.attr('data-isFave', 'false');
+            drinkCard.attr('data-drinkID', drinkID);
             var drinkName = $('<header class="drinkName">' + drink.strDrink + '</div>');
             var drinkImg = $("<img class='imgDrink' src='" + drink.strDrinkThumb + "'>");
             var drinkFav = $("<div class='favorite'><i class='fas fa-heart'></i></div>");
@@ -90,6 +97,37 @@ $(document).on('click', '.drinkCard', function() {
         $(this).find('.drinkName').css('color', 'white');
         $(this).css('border', 'none');
     }
+    var self = $(this);
+    var drinkID = self.attr('data-drinkID');
+    console.log(drinkID);
+    var queryURL = 'https://www.thecocktaildb.com/api/json/v2/' + apiKey + '/lookup.php?i=' + drinkID;
+    var recipe;
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    }).then(function(response){
+        var searchedDrink = response.drinks[0];
+        recipe = response.drinks[0].strInstructions;
+        console.log(recipe);
+        var count = 1;
+        for(var key in searchedDrink) {
+             
+            if(searchedDrink[key] !== '' && searchedDrink[key] !== null && key.indexOf('strIngredient') !== -1) {
+                   
+                console.log(count + '= ' + key + ': ' + searchedDrink[key]);
+
+                var drinkIngDiv = $("<div class='drinkIngredients'>");
+                var itemDiv = $("<p class='drinkIng'>" + searchedDrink[key] + "</p>");
+                drinkIngDiv.append(itemDiv);
+                self.append(drinkIngDiv);
+                
+                
+                count++;
+            } 
+        }
+
+        self.append("<div class='recipe'>Instructions: " + recipe + "</div>");
+    });
 
 })
 
@@ -104,23 +142,11 @@ $(document).on('click', '.ingredient', function() {
     counter--;
 
     $(this).remove();
+<<<<<<< HEAD
+    
+})
+
+=======
 
 });
-
-// $('#add-ingredients').on('click', function() {
-
-//     var ingredient = $('#ingredients-input').val().trim();
-
-//     ingredients.push(ingredient);
-//     console.log(ingredients);
-
-//     var ingredientDiv = $("<div id='" + ingredients[counter] + "' class='ingredient'>" + ingredients[counter] + "<span class='remove'> x</span>" + "</div>");
-
-//     $('#ingredients').append(ingredientDiv);
-
-//     $('#ingredients-input').val('');
-
-
-//     console.log(counter);
-//     counter++;
-// })
+>>>>>>> b74376e72ebd8b815874b506a3b988c9ac7722b1
