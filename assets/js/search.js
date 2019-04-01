@@ -146,44 +146,6 @@ $(document).on('click', '.ingredient', function() {
 
 
 
-
-
-// ---------------------------------------- Pantry Javascript ---------------------------
-var ingInput;
-var pantry= [];
-var usersRef;
-var userID;
-// var newUserRef;
-var  userKey;
-var thisUserPantry;
-var newUser = {};
-var counter = 0;
-
-$('#sign-up-btn').on('click', function(){
-    
-    if(userID === undefined) {
-        alert('hello!');
-        userID = $('#sign-up').val().trim();
-        newUser = {
-            username: userID,
-            pantry: [],
-            favorites: ['']
-        }
-
-        usersRef = database.ref('users');
-
-        var addIng = $("<br><span>Add Ingredient: </span><div id='add-to-pantry'><input id='user-ingredient' type='text'><button id='store-btn' class='btn'>+</btn></div>");
-        $('#add-user').append(addIng);
-
-        $('#sign-up').val('');
-        } else {
-            return false;
-        }
-    
-
-});
-
-
 $(document).on('click', '#store-btn', function(){
     event.preventDefault();
 
